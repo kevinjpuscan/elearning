@@ -28,6 +28,14 @@ module.exports.routes = {
     view: 'pages/homepage'
   },
 
+  '/login': {
+    view: 'pages/auth/login'
+  },
+
+  '/register': {
+    view: 'pages/auth/register'
+  },
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
@@ -43,7 +51,6 @@ module.exports.routes = {
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
-
 
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗

@@ -1,107 +1,238 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>New Sails App</title>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Cursos de Capacitación online</title>
 
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Bootstrap -->
+  <link href="styles/bootstrap.min.css" rel="stylesheet">
+  <!-- Ionicons -->
+  <link href="styles/ionicons.min.css" rel="stylesheet">
+  <link href="styles/linear-icon.css" rel="stylesheet">
+  <!-- Owl-carousel -->
+  <link href="styles/owl.carousel.css" rel="stylesheet">
+  <link href="styles/owl.theme.css" rel="stylesheet">
+  <!-- Magnific popup style sheet -->
+  <link rel="stylesheet" href="styles/magnific-popup.css">
 
-
-    <!--
-        Stylesheets and Preprocessors
-        ==============================
-
-        You can always bring in CSS files manually with `<link>` tags, or asynchronously
-        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
-        of Sails' conventional asset pipeline (boilerplate Gruntfile).
-
-        By default, stylesheets from your `assets/styles` folder are included
-        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
-        are supported. In production, your styles will be minified and concatenated into
-        a single file.
-
-        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
-        For example, here are a few things you could do:
-
-            + Change the order of your CSS files
-            + Import stylesheets from other directories
-            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
-    -->
-
-    <!--STYLES-->
-    <!--STYLES END-->
-  </head>
-
-  <body>
-    <%- body %>
+  <!-- Dolphin style sheet -->
+  <link rel="stylesheet" href="styles/weblysleek-ui-fonts.css">
+  <link rel="stylesheet" href="styles/main.css">
 
 
 
-    <!--
-        Client-side Templates
-        ========================
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700,900" rel="stylesheet">
 
-        HTML templates are important prerequisites of modern, rich client applications.
-        To work their magic, frameworks like React, Vue.js, Angular, Ember, and Backbone
-        require that you load these templates client-side.
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="images/Logo.png" alt="">
+        <span class="text--bold">dolphin</span>
+      </a>
+    </div>
 
-        By default, your Gruntfile is configured to automatically load and precompile
-        client-side JST templates in your `assets/templates` folder, then
-        include them here automatically (between TEMPLATES and TEMPLATES END).
+    <style>
+      .dropdown-item{
+        padding: 10px;
+        font-size: 12px;
+        display: block;
+        color: #333333;
+        font-family: 'Montserrat', sans-serif;
+      }
 
-        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
-        For example, here are a few things you could do:
+      .dropdown-item:hover{
+        color: #005499;
+      }
 
-            + Import templates from other directories
-            + Use a different view engine (handlebars, dust, pug/jade, etc.)
-            + Internationalize your client-side templates using a server-side
-              stringfile before they're served.
-    -->
+      a:link{
+        text-decoration: none;
+      }
 
-    <!--TEMPLATES-->
-    <!--TEMPLATES END-->
+    </style>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#home">Inicio <span class="sr-only">(current)</span></a></li>
+        <li><a href="#courses">Cursos </a></li>
+        <li><a href="#features">features</a></li>
+        <li><a href="#price">precios</a></li>
+        <li><a href="#contact">contacto</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="lnr lnr-user" style="font-size: 15px"></i></a>
+          <ul class="dropdown-menu">
+            <a class="dropdown-item" href="#">Perfil</a>
+            <a class="dropdown-item" href="#">Mi Suscripción</a>
+            <a class="dropdown-item" href="#">Cerrar Sesión</a>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="lnr lnr-user" style="font-size: 15px"></i></a>
+          <ul class="dropdown-menu">
+            <a class="dropdown-item" href="/login">Iniciar Sesión</a>
+            <a class="dropdown-item" href="/register">Registrarse</a>
+          </ul>
+        </li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<%-body%>
+
+<!-- FOOTER -->
+<footer>
+  <section class="section footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <div class="list-item-header">
+                download
+              </div>
+              <div class="list-group footer-list-group">
+                <a href="#" class="list-group-item">Dolphin</a>
+                <a href="#" class="list-group-item">Web Player</a>
+                <a href="#" class="list-group-item">Cache server</a>
+                <a href="#" class="list-group-item">Audio player</a>
+                <a href="#" class="list-group-item">Older Version </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="list-item-header">
+                RESOURCES
+              </div>
+              <div class="list-group footer-list-group">
+                <a href="#" class="list-group-item">Learn Dolphin</a>
+                <a href="#" class="list-group-item">Latest news</a>
+                <a href="#" class="list-group-item">Documantion</a>
+                <a href="#" class="list-group-item">FAQ</a>
+                <a href="#" class="list-group-item">Gameplay</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="list-item-header">
+                contact
+              </div>
+              <div class="contact-details">
+                <div class="media">
+                  <div class="media-left contact-media-left">
+                    <p>Address</p>
+                  </div>
+                  <div class="media-body">
+                    <p>560 Judah St &amp; 15th Ave, Apt 5 San Francisco, CA, 230903 Newyork</p>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="media-left contact-media-left">
+                    <p>Mobile</p>
+                  </div>
+                  <div class="media-body">
+                    <p>+440 231 258 12</p>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="media-left contact-media-left">
+                    <p>Fax</p>
+                  </div>
+                  <div class="media-body">
+                    <p>+440 231 258 12</p>
+                  </div>
+                </div>
+                <div class="media">
+                  <div class="media-left contact-media-left">
+                    <p>Email</p>
+                  </div>
+                  <div class="media-body">
+                    <p>example@mail.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="list-item-header">
+                Total Download Copy
+              </div>
+              <div class="pagination-wraper">
+                <ul class="pagination">
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>6</li>
+                </ul>
+              </div>
+              <div class="list-item-header">
+                LANGUAGE
+              </div>
+              <div class="row">
+                <div class="col-sm-4 language-list">Русский</div>
+                <div class="col-sm-4 language-list">Português</div>
+                <div class="col-sm-4 language-list">한국어</div>
+                <div class="col-sm-4 language-list">中文</div>
+                <div class="col-sm-4 language-list">日本語</div>
+                <div class="col-sm-4 language-list">Español</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="footer-bottom">
+    <div class="container">
+      <hr class="footer-devider">
+      <div class="row">
+        <div class="col-md-5"><p class="copyright">Copyright © 2016 Unity Technologies</p></div>
+        <div class="col-md-5">
+          <ul class="footer-menu">
+            <li><a href="">Legal</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Policy</a></li>
+            <li><a href="">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <a id="scroll-top-div" href="" class="pull-right back-top-btn">back to top <span class="btn-icon"><i class="ion-ios-arrow-thin-up"></i></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
 
 
-    <!--
-        Server-side View Locals
-        ========================
 
-        Sometimes, it's convenient to get access to your server-side view locals from
-        client-side JavaScript.  This can improve page load times, remove the need for
-        extra AJAX requests, and make your client-side code easier to understand and
-        to maintain.  Sails provides a simple mechanism for accessing dynamic view
-        locals: the "exposeLocalsToBrowser()" view partial.
-
-        For more information on using this built-in feature, see:
-        https://sailsjs.com/docs/concepts/views/locals#?escaping-untrusted-data-using-exposelocalstobrowser
-
-    -->
-
-
-    <!--
-
-      Client-side Javascript
-      ========================
-
-      You can always bring in JS files manually with `script` tags, or asynchronously
-      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
-      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
-
-      By default, files in your `assets/js` folder are included here
-      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
-      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
-      and concatenated into a single file.
-
-      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
-      For example, here are a few things you could do:
-
-          + Change the order of your scripts
-          + Import scripts from other directories
-          + Use a different preprocessor, like TypeScript
-
-    -->
-
-    <!--SCRIPTS-->
-    <!--SCRIPTS END-->
-  </body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.1.0.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Owl-carousel JS -->
+<script src="js/owl.carousel.js"></script>
+<!-- Dolphin JS -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<!-- Dolphin JS -->
+<script src="js/main.js"></script>
+</body>
 </html>
+
