@@ -17,6 +17,13 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+   '*': true,
+
+    AuthController: {
+        // Apply the 'isLoggedIn' policy to the 'update' action of 'UserController'
+        'singup':'notlogin',
+        'login': 'notlogin',
+        'logout':'islogin'
+    },
 
 };
