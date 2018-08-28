@@ -28,13 +28,9 @@ module.exports.routes = {
     view: 'pages/homepage'
   },
 
-  '/login': {
-    view: 'pages/auth/login'
-  },
+  '/login': 'AuthController.view_login',
 
-  '/register': {
-    view: 'pages/auth/register'
-  },
+  '/register': 'AuthController.view_register',
 
   /***************************************************************************
   *                                                                          *

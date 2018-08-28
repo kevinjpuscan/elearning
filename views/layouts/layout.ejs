@@ -8,24 +8,44 @@
   <title>Cursos de Capacitación online</title>
 
   <!-- Bootstrap -->
-  <link href="styles/bootstrap.min.css" rel="stylesheet">
+  <link href="../styles/bootstrap.min.css" rel="stylesheet">
   <!-- Ionicons -->
-  <link href="styles/ionicons.min.css" rel="stylesheet">
-  <link href="styles/linear-icon.css" rel="stylesheet">
+  <link href="../styles/ionicons.min.css" rel="stylesheet">
+  <link href="../styles/linear-icon.css" rel="stylesheet">
   <!-- Owl-carousel -->
-  <link href="styles/owl.carousel.css" rel="stylesheet">
-  <link href="styles/owl.theme.css" rel="stylesheet">
+  <link href="../styles/owl.carousel.css" rel="stylesheet">
+  <link href="../styles/owl.theme.css" rel="stylesheet">
   <!-- Magnific popup style sheet -->
-  <link rel="stylesheet" href="styles/magnific-popup.css">
+  <link rel="stylesheet" href="../styles/magnific-popup.css">
 
   <!-- Dolphin style sheet -->
-  <link rel="stylesheet" href="styles/weblysleek-ui-fonts.css">
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="../styles/weblysleek-ui-fonts.css">
+  <link rel="stylesheet" href="../styles/main.css">
+
+  
 
 
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,700,900" rel="stylesheet">
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="../js/bootstrap.min.js"></script>
+  <!-- Owl-carousel JS -->
+  <script src="../js/owl.carousel.js"></script>
+  <!-- Dolphin JS -->
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <!-- Dolphin JS -->
+  <script src="../js/main.js"></script>
+  <!-- Axios JS -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Vue JS -->
+  <script src="../dependencies/vue.js"></script>
+  <!-- Socketi IO -->
+  <script src="../dependencies/sails.io.js"></script>
 
 </head>
 <body>
@@ -77,7 +97,7 @@
           <ul class="dropdown-menu">
             <a class="dropdown-item" href="#">Perfil</a>
             <a class="dropdown-item" href="#">Mi Suscripción</a>
-            <a class="dropdown-item" href="#">Cerrar Sesión</a>
+            <a class="dropdown-item" href="/auth/logout">Cerrar Sesión</a>
           </ul>
         </li>
 
@@ -223,16 +243,7 @@
 
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-3.1.0.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Owl-carousel JS -->
-<script src="js/owl.carousel.js"></script>
-<!-- Dolphin JS -->
-<script src="js/jquery.magnific-popup.min.js"></script>
-<!-- Dolphin JS -->
-<script src="js/main.js"></script>
+
 </body>
 </html>
 

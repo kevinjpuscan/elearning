@@ -7,6 +7,14 @@
 let bcrypt = require('bcryptjs');
 module.exports = {
 
+  view_register:(req,res)=>{
+    res.view('pages/auth/register');
+  },
+
+  view_login:(req,res)=>{
+    res.view('pages/auth/login');
+  },
+
   singup:(req,res)=>{
 
     let newEmail=req.param('email').toLowerCase();
@@ -85,6 +93,11 @@ returning id;`,(err,data)=>{
 
 
   },
+
+  logout:(req,res)=>{
+    req.session.sessionId=null;
+    res.redirect('/');
+  }
 
 
 };

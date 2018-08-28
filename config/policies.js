@@ -23,7 +23,9 @@ module.exports.policies = {
         // Apply the 'isLoggedIn' policy to the 'update' action of 'UserController'
         'singup':'notlogin',
         'login': 'notlogin',
-        'logout':'islogin'
+        'logout':'islogin',
+        'view_register':'notlogin',
+        'view_login':'notlogin'
     },
 
 };

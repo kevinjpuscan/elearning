@@ -1,5 +1,5 @@
 <!-- ABOUT -->
-<section id="about" class="section padding-top-bottom-65">
+<section id="login" class="section padding-top-bottom-65">
   <div class="container">
 
     <div class="row">
@@ -8,19 +8,20 @@
           <li style="padding: 15px">
             <div class="form-group">
               <label><h5>Email:</h5></label>
-              <input type="email" class="form-control" id="username" placeholder="tucorreo@gmail.com">
+              <input v-model="email" type="email" class="form-control" id="username" placeholder="tucorreo@gmail.com">
             </div>
 
             <div class="form-group">
               <label><h5>Contraseña:</h5></label>
-              <input type="password" class="form-control" id="pass" placeholder="*******">
+              <input v-model="password" type="password" class="form-control" id="pass" placeholder="*******">
             </div>
 
           </li>
 
           <li class="footer">
-            <a class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50" href="#" role="button">Iniciar Sesión</a>
-            <a class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o" href="register.html" role="button">Regístrate</a>
+            <p v-if="message!==''" style="font-size: 14px;color: brown"><strong>{{message}}</strong></p>
+            <a v-on:click="validateinput" class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50" href="#" role="button">Iniciar Sesión</a>
+            <a class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o" href="/register.html" role="button">Regístrate</a>
           </li>
         </ul>
 
@@ -30,4 +31,6 @@
   </div>
 
 </section>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
+<script src="../js/auth/login.js"></script>
 <!-- ABOUT END -->
