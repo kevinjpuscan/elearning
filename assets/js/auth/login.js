@@ -6,9 +6,8 @@ let app = new Vue({
     el: '#login',
     data: {
        locals:{},
-       email:'',
-       password:'',
-       repassword:'',
+       email:'kevinjpuscan@gmail.com',
+       password:'nomeacuerdo',
        message:''
 
     },

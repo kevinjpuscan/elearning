@@ -32,7 +32,8 @@ returning id;`,(err,data)=>{
               if(data.rowCount>0){
                 // Store the user's new id in their session.
                 req.session.sessionId= data.rows[0].id;
-               
+                req.session.user=req.param('fullname');
+                req.session.isroot=false;
                 res.ok({ok:true,message:'Redirect to /'});
               }else{
                 res.ok({ok:false,message:'Error to save user'});
@@ -71,6 +72,8 @@ returning id;`,(err,data)=>{
             if(!err){
               if(isCorrect){
                 req.session.sessionId= data.rows[0].id;
+                req.session.user=data.rows[0].fullname;
+                req.session.isroot=data.rows[0].isroot;
                 res.ok({ok:true,message:'Redirect to /'});
               }else{
                 res.ok({ok:false,message:'Password incorrect'});
@@ -96,6 +99,8 @@ returning id;`,(err,data)=>{
 
   logout:(req,res)=>{
     req.session.sessionId=null;
+    req.session.user=null;
+    req.session.isroot=null;
     res.redirect('/');
   }
 

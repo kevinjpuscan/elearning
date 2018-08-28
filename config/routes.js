@@ -29,8 +29,10 @@ module.exports.routes = {
   },
 
   '/login': 'AuthController.view_login',
-
   '/register': 'AuthController.view_register',
+
+  '/admin': 'AdminController.view_index',
+  '/admin/course': 'AdminController.view_course',
 
   /***************************************************************************
   *                                                                          *

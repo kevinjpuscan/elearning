@@ -28,4 +28,9 @@ module.exports.policies = {
         'view_login':'notlogin'
     },
 
+    AdminController:{
+        '*':'islogin',
+        '*':'isroot'
+    }
+
 };
