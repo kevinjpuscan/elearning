@@ -6,6 +6,9 @@
  */
 
 module.exports = {
+    view_lesson:(req,res)=>{
+        res.view('pages/course/lesson');
+    },
     updatelesson:(req,res)=>{
         Vista.getDatastore().sendNativeQuery(`update lessons set ${req.param('parameter')}='${req.param('value')}',updatedAt=now() where id=${req.param('lesson_id')};`,(err,data)=>{
             if(!err){
@@ -24,6 +27,7 @@ module.exports = {
             }
         }) 
     }
+
 
 };
 
