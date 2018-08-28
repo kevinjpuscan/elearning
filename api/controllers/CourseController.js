@@ -6,6 +6,9 @@
  */
 
 module.exports = {
+  view_course:(req,res)=>{
+    res.view('pages/course/detail');
+  },
   updatecourse:(req,res)=>{
       let query=`update courses set ${req.param('parameter')}='${req.param('value')}',updatedAt=now() where id=${req.param('course_id')};`;
       console.log(query);

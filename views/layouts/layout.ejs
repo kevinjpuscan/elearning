@@ -96,6 +96,9 @@
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="lnr lnr-user" style="font-size: 15px"></i></a>
               <ul class="dropdown-menu">
+                  <% if (req.session.isroot) { %> 
+                    <a class="dropdown-item" href="/admin">Admin</a>
+                    <%}%>  
                 <a class="dropdown-item" href="#">Perfil</a>
                 <a class="dropdown-item" href="#">Mi Suscripción</a>
                 <a class="dropdown-item" href="/auth/logout">Cerrar Sesión</a>

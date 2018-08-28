@@ -34,6 +34,8 @@ module.exports.routes = {
   '/admin': 'AdminController.view_index',
   '/admin/course': 'AdminController.view_course',
 
+  '/course': 'CourseController.view_course',
+
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
