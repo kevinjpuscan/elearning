@@ -75,6 +75,7 @@ module.exports = {
 
   uploadimage:(req,res)=>{
     
+    console.log(req.param('course_id'));
   
     req.file('image').upload({
       // don't allow the total upload size to exceed ~10MB
@@ -94,7 +95,7 @@ module.exports = {
      let name=url[url.length-1];
 
      let query=`update courses set image_url ='${name}' where id=${req.param('course_id')};`;
-     console.log(query);
+  
       Vista.getDatastore().sendNativeQuery(query,(err,data)=>{
         if(!err){
           return res.ok();

@@ -45,14 +45,13 @@ let app = new Vue({
             formData.append('image', app.course.image);
             formData.append('course_id', app.course.id);
 
+        
             axios.post('/api/v1/course/uploadimage', formData, {
                 headers: {
                 'Content-Type': 'multipart/form-data'
                 }
             }).then(function (response) {
-                console.log(response);
-               app.lessons.push(response.data.lesson);
-               $("#loader").show();
+                
             })
             .catch(function (error) {
                
