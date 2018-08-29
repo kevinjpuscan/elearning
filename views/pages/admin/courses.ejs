@@ -1,0 +1,76 @@
+
+<div id="courses" class="row">
+        
+        <div class="col-md-12 grid-margin">
+            <div class="card">     
+                <div class="card-body">
+                    <h3>Cursos</h3>
+                    <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Nombre</th>
+                              <th>Fecha Creación</th>
+                              <th>Status</th>
+                              <th>Options</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <%
+                                _.each(courses, function (course) {
+                                %>
+                            
+                                <tr>
+                                        <td><%= course.name %></td>
+                                        <td><%= course.createdat %></td>
+                                        <td>
+                                          <label class="badge badge-danger"><%= course.active %></label>
+                                        </td>
+                                      <td>
+                                        <a href="/admin/course?course_id=<%= course.id %>">
+                                                <i class="material-icons " >
+                                                        remove_red_eye
+                                                        </i>
+                                        </a>
+                                
+                                                    <i class="material-icons delete" data-toggle="modal" data-target="#exampleModal" course_id="<%= course.id %>">
+                                                        clear
+                                                    </i>
+                                      </td>
+                                      </tr><% });
+                               %>
+                        
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+            </div>
+        </div>    
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Confirmar eliminación de curso</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Si eliminas el curso perderás también las lecciónes del mismo, ¿Seguro que deseas continuar?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <a id="btn_confirm" type="button" class="btn btn-primary" href="" >Eliminar</a>
+            </div>
+          </div>
+        </div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
+<script>
+$('body').on('click','.delete',(el)=>{
+  $("#btn_confirm").attr('href',`/admin/course/remove?course_id=${$(el.currentTarget).attr('course_id')}`);
+});    
+</script>

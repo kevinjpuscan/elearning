@@ -14,21 +14,35 @@
                    
                   <div class="row">
                     <div class="col-md-12">
+                    
+                        <% if (!error) { %> 
+                          
+
                       <div class="pricing-table" style="margin-top: 30px">
                           <li class="header">
+                            
+                              <% if (req.session.user) { %> 
                               <iframe src="https://player.vimeo.com/video/281529369" width="850" height="530" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                               <p><a href="https://vimeo.com/281529369">Ugly</a> from <a href="https://vimeo.com/nikitadiakur">nikita diakur</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-                          </li>
+                              <%}else{
+                                %>
+                                <div style=" width:850px; height:530px;background-color: rgba(0,0,0,.1);padding: 50px;text-align: center; margin: auto">
+                                  <h3 style="margin-top:170px">
+                                    <strong >
+                                        Inicia sesión para acceder a este contenido
+                                    </strong>
+                                    </h3>
+                                </div>
+                                <%  
+                              }%>
+                            </li>
         
                         <li>
                           <div class="row">
                             
                           </div>
                         </li>
-        
-                        
-        
-                       
+
               
                         <li class="footer">
                           
@@ -36,6 +50,10 @@
                       </ul>
               
                     </div>
+                    <%}else{ %> 
+                      <h3>Ocurrió un error</h3>
+                      <%}%> 
+
               
                   </div>
                 </div>

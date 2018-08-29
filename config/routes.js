@@ -33,8 +33,14 @@ module.exports.routes = {
 
   '/admin': 'AdminController.view_index',
   '/admin/course': 'AdminController.view_course',
+  '/admin/courses': 'AdminController.view_courses',
+
+  '/admin/course/remove': 'CourseController.deletecourse',
 
   '/course': 'CourseController.view_course',
+
+  '/lesson': 'LessonController.view_lesson',
+  
 
   /***************************************************************************
   *                                                                          *
@@ -51,7 +57,7 @@ module.exports.routes = {
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
-
+  '/api/v1/courses': 'CourseController.getcourses',
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗

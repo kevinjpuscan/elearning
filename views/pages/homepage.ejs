@@ -1,246 +1,230 @@
-<!-- HOME -->
+<style>
+    .course{
+    border-radius: 5px;
+    text-align: center;
+    }
+    
+    .card{
+    margin: auto;
+    }
+    
+    .card-img-top{
+    width: 100%;
+    }
+    
+    .card-body p{
+    font-size: 14px;
+    text-align: left;
+    }
+    
+    .card-body h4{
+    text-align: left;
+    }
+    
+    </style>
+
+<div id="home-main">
+  <!-- HOME -->
 <section id="home" class="section jumbotron-section bg--position-center no-repeat bg-cover md-display-table"
-         style="background-image:url(images/header.png);height: 480px">
-  <div class="jumbotron jumbotron-fluid bg-transparent md-display-table-cell md-vertical-middle">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h2 class="">Los mejores cursos online.</h2>
-          <p class="lead">Cursos enfocados en la docencia</p>
-          <a class="btn btn-default btn-theme btn-rounded-corner" href="#" role="button">Ver Cursos</a>
-        </div>
-      </div>
-    </div>
-  </div>
+style="background-image:url(images/header.png);height: 480px">
+<div class="jumbotron jumbotron-fluid bg-transparent md-display-table-cell md-vertical-middle">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+ <h2 class="">Los mejores cursos online.</h2>
+ <p class="lead">Cursos enfocados en la docencia</p>
+ <a class="btn btn-default btn-theme btn-rounded-corner" href="#" role="button">Ver Cursos</a>
+</div>
+</div>
+</div>
+</div>
 </section>
 <!-- HOME END -->
 
-<style>
-  .course{
-    border-radius: 5px;
-    text-align: center;
-  }
 
-  .card{
-    margin: auto;
-  }
-
-  .card-img-top{
-    width: 100%;
-  }
-
-  .card-body p{
-    font-size: 14px;
-    text-align: left;
-  }
-
-  .card-body h4{
-    text-align: left;
-  }
-
-</style>
 <!-- ABOUT -->
 <section id="courses" class="section padding-top-bottom-65">
-  <div class="container">
-    <header class="section-heading text-center">
-      <h3><span class="text--light">NUESTROS</span><span class="text--semi-bold"> CURSOS</span> </h3>
-    </header>
-    <div class="row">
-      <div class="col-md-4 course">
-        <div class="card" style="width: 30rem;">
-          <img class="card-img-top" src="images/blog1.png" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Ir al Curso</a>
-          </div>
-        </div>
-      </div>
+<div class="container">
+<header class="section-heading text-center">
+<h3><span class="text--light">NUESTROS</span><span class="text--semi-bold"> CURSOS</span> </h3>
+</header>
+<div class="row">
 
-      <div class="col-md-4 course">
-        <div class="card" style="width: 30rem;">
-          <img class="card-img-top" src="images/blog1.png" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Ir al Curso</a>
-          </div>
-        </div>
-      </div>
+<div v-for="course in courses" class="col-md-4 course">
+<div class="card" style="width: 30rem;">
+ <img class="card-img-top" src="images/blog1.png" alt="Card image cap">
+ <div class="card-body">
+   <h4 class="card-title">{{course.name}}</h4>
+   <p class="card-text">{{course.description}}</p>
+   <a v-bind:href="'/course?course_id='+course.id" class="btn btn-primary">Ir al Curso</a>
+ </div>
+</div>
+</div>
 
-      <div class="col-md-4 course">
-        <div class="card" style="width: 30rem;">
-          <img class="card-img-top" src="images/blog1.png" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Ir al Curso</a>
-          </div>
-        </div>
-      </div>
 
-    </div>
-  </div>
+
+</div>
+</div>
 
 </section>
 <!-- ABOUT END -->
 
 <!-- FEATURE -->
 <section id="features" class="section features">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="featured-image-container">
-          <img class="max-width-100" src="images/featured-vector.png" alt="">
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="regular-content margin-bottom--30">
-          <header>
-            <h3><span class="text--semi-bold">Best</span> <span class="text--light"> Featured</span></h3>
-          </header>
-          <p>Welcome to one of the world’s largest creative communities and the number one game development platform. Unity gives you everything.</p>
-        </div>
-        <div class="media">
-          <a class="media-left" href="#">
-            <div class="media-object"><i class="ion-ios-toggle-outline"></i></div>
-          </a>
-          <div class="media-body">
-            <h4 class="media-heading">Goto Anything</h4>
-            <div class="media-text">
-              <p>
-                Use Goto Anything to open files with only a few keystrokes, and instantly jump to symbols, lines or words.Triggered with Ctrl+P, it is possible to:
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="media">
-          <a class="media-left" href="#">
-            <div class="media-object media-iconic"><i class="ion-ios-photos-outline"></i></div>
-          </a>
-          <div class="media-body">
-            <h4 class="media-heading">Multiple Selections</h4>
-            <div class="media-text">
-              <p>
-                Make ten changes at the same time, not one change ten times. Sarwka selections allow you to interactively change many line.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="featured-image-container">
+ <img class="max-width-100" src="images/featured-vector.png" alt="">
+</div>
+</div>
+<div class="col-md-6">
+<div class="regular-content margin-bottom--30">
+ <header>
+   <h3><span class="text--semi-bold">Best</span> <span class="text--light"> Featured</span></h3>
+ </header>
+ <p>Welcome to one of the world’s largest creative communities and the number one game development platform. Unity gives you everything.</p>
+</div>
+<div class="media">
+ <a class="media-left" href="#">
+   <div class="media-object"><i class="ion-ios-toggle-outline"></i></div>
+ </a>
+ <div class="media-body">
+   <h4 class="media-heading">Goto Anything</h4>
+   <div class="media-text">
+     <p>
+       Use Goto Anything to open files with only a few keystrokes, and instantly jump to symbols, lines or words.Triggered with Ctrl+P, it is possible to:
+     </p>
+   </div>
+ </div>
+</div>
+<div class="media">
+ <a class="media-left" href="#">
+   <div class="media-object media-iconic"><i class="ion-ios-photos-outline"></i></div>
+ </a>
+ <div class="media-body">
+   <h4 class="media-heading">Multiple Selections</h4>
+   <div class="media-text">
+     <p>
+       Make ten changes at the same time, not one change ten times. Sarwka selections allow you to interactively change many line.
+     </p>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <!-- FEATURE END-->
 
 
 <!-- PRICING TABLE -->
 <section id="price" class="section ">
-  <div class="container pricing-wraper">
+<div class="container pricing-wraper">
 
-    <header class="section-heading text-center">
-      <h3><span class="text--semi-bold">Elíge </span> <span class="text--light">la mejor opción</span></h3>
-    </header>
-    <div class="row pricing-row">
-      <div class="col-md-4 col-sm-6 no--padding">
-        <ul class="pricing-table">
-          <li class="header">Mensual</li>
-          <li class="price-tag"><span class="price"><sup>S/.</sup>100</span><span class="package-duration">por mes</span></li>
-          <li>Acceso a Todos los cursos</li>
-          <li>Evaluaciones</li>
-          <li>ningun mes GRATIS</li>
-          <li class="footer"><a class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o" href="#" role="button">Suscribirse</a></li>
-        </ul>
-      </div>
+<header class="section-heading text-center">
+<h3><span class="text--semi-bold">Elíge </span> <span class="text--light">la mejor opción</span></h3>
+</header>
+<div class="row pricing-row">
+<div class="col-md-4 col-sm-6 no--padding">
+<ul class="pricing-table">
+ <li class="header">Mensual</li>
+ <li class="price-tag"><span class="price"><sup>S/.</sup>100</span><span class="package-duration">por mes</span></li>
+ <li>Acceso a Todos los cursos</li>
+ <li>Evaluaciones</li>
+ <li>ningun mes GRATIS</li>
+ <li class="footer"><a class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o" href="#" role="button">Suscribirse</a></li>
+</ul>
+</div>
 
-      <div class="col-md-4 col-sm-6 no--padding">
-        <ul class="pricing-table">
-          <li class="header">6 meses</li>
-          <li class="price-tag"><span class="price"><sup>S/.</sup>500</span><span class="package-duration">por cada 6 meses</span></li>
-          <li>Acceso a Todos los cursos</li>
-          <li>Evaluaciones</li>
-          <li>1 mes GRATIS</li>
-          <li class="footer"><a class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o" href="#" role="button">Suscribirse</a></li>
-        </ul>
-      </div>
+<div class="col-md-4 col-sm-6 no--padding">
+<ul class="pricing-table">
+ <li class="header">6 meses</li>
+ <li class="price-tag"><span class="price"><sup>S/.</sup>500</span><span class="package-duration">por cada 6 meses</span></li>
+ <li>Acceso a Todos los cursos</li>
+ <li>Evaluaciones</li>
+ <li>1 mes GRATIS</li>
+ <li class="footer"><a class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o" href="#" role="button">Suscribirse</a></li>
+</ul>
+</div>
 
-      <div class="col-md-4 col-sm-6 no--padding">
-        <ul class="pricing-table">
-          <li class="header">Anual</li>
-          <li class="price-tag"><span class="price"><sup>S/.</sup>1000</span><span class="package-duration">por año</span></li>
-          <li>Acceso a Todos los cursos</li>
-          <li>Evaluaciones</li>
-          <li>2 mes GRATIS</li>
-          <li class="footer"><a class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o" href="#" role="button">Suscribirse</a></li>
-        </ul>
-      </div>
+<div class="col-md-4 col-sm-6 no--padding">
+<ul class="pricing-table">
+ <li class="header">Anual</li>
+ <li class="price-tag"><span class="price"><sup>S/.</sup>1000</span><span class="package-duration">por año</span></li>
+ <li>Acceso a Todos los cursos</li>
+ <li>Evaluaciones</li>
+ <li>2 mes GRATIS</li>
+ <li class="footer"><a class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o" href="#" role="button">Suscribirse</a></li>
+</ul>
+</div>
 
-    </div>
-    <div class="row">
-      <div class="col-md-6 col-sm-12 col-md-offset-3">
-        <div class="section-sebheading text-center pricing-subheading">
-          <h5>Designed to take teamwork to the next level</h5>
-        </div>
-        <div class="row">
-          <div class="col-sm-4 col-xs-12 text-center feature-with-icon">
-            <div class="icon-wraper text-center">
-              <img src="images/pricing-icon-1.png" alt="">
-            </div>
-            <div class="pricing-feature">
-              <p>All the space you need</p>
-            </div>
+</div>
+<div class="row">
+<div class="col-md-6 col-sm-12 col-md-offset-3">
+<div class="section-sebheading text-center pricing-subheading">
+ <h5>Designed to take teamwork to the next level</h5>
+</div>
+<div class="row">
+ <div class="col-sm-4 col-xs-12 text-center feature-with-icon">
+   <div class="icon-wraper text-center">
+     <img src="images/pricing-icon-1.png" alt="">
+   </div>
+   <div class="pricing-feature">
+     <p>All the space you need</p>
+   </div>
 
-          </div>
-          <div class="col-sm-4 col-xs-12 text-center feature-with-icon">
-            <div class="icon-wraper text-center">
-              <img src="images/pricing-icon-2.png" alt="">
-            </div>
-            <div class="pricing-feature">
-              <p>Advanced security</p>
-            </div>
+ </div>
+ <div class="col-sm-4 col-xs-12 text-center feature-with-icon">
+   <div class="icon-wraper text-center">
+     <img src="images/pricing-icon-2.png" alt="">
+   </div>
+   <div class="pricing-feature">
+     <p>Advanced security</p>
+   </div>
 
-          </div>
-          <div class="col-sm-4 col-xs-12 text-center feature-with-icon">
-            <div class="icon-wraper text-center">
-              <img src="images/pricing-icon-3.png" alt="">
-            </div>
-            <div class="pricing-feature">
-              <p>Dedicated live support</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+ </div>
+ <div class="col-sm-4 col-xs-12 text-center feature-with-icon">
+   <div class="icon-wraper text-center">
+     <img src="images/pricing-icon-3.png" alt="">
+   </div>
+   <div class="pricing-feature">
+     <p>Dedicated live support</p>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <!-- PRICING TABLE END-->
 
 
 <!-- CLIENT -->
 <section id="clients" class="section client-section bg--position-center no-repeat bg-cover" style="background-image:url(images/clints_logo.png)">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-6 ">
-        <img src="images/logo1.png" alt="" class="img-responsive max-width-100 max-height-60 padding-15 align--center">
-      </div>
-      <div class="col-md-4 col-sm-6 ">
-        <img src="images/logo2.png" alt="" class="img-responsive max-width-100 max-height-60 padding-15 align--center">
-      </div>
-      <div class="col-md-4 col-sm-6 ">
-        <img src="images/logo3.png" alt="" class="img-responsive max-width-100 max-height-60 padding-15 align--center">
-      </div>
-      <div class="col-md-4 col-sm-6 ">
-        <img src="images/logo4.png" alt="" class="img-responsive max-width-100 max-height-60 padding-15 align--center">
-      </div>
-      <div class="col-md-4 col-sm-6 ">
-        <img src="images/logo5.png" alt="" class="img-responsive max-width-100 max-height-60 padding-15 align--center">
-      </div>
-      <div class="col-md-4 col-sm-6 ">
-        <img src="images/logo6.png" alt="" class="img-responsive max-width-100 max-height-60 padding-15 align--center">
-      </div>
-    </div>
-    <div class="author-name-sign text-center">-And thousand of more companies</div>
-  </div>
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-sm-6 ">
+<img src="images/logo1.png" alt="" class="img-responsive max-width-100 max-height-60 padding-15 align--center">
+</div>
+<div class="col-md-4 col-sm-6 ">
+<img src="images/logo2.png" alt="" class="img-responsive max-width-100 max-height-60 padding-15 align--center">
+</div>
+<div class="col-md-4 col-sm-6 ">
+<img src="images/logo3.png" alt="" class="img-responsive max-width-100 max-height-60 padding-15 align--center">
+</div>
+<div class="col-md-4 col-sm-6 ">
+<img src="images/logo4.png" alt="" class="img-responsive max-width-100 max-height-60 padding-15 align--center">
+</div>
+<div class="col-md-4 col-sm-6 ">
+<img src="images/logo5.png" alt="" class="img-responsive max-width-100 max-height-60 padding-15 align--center">
+</div>
+<div class="col-md-4 col-sm-6 ">
+<img src="images/logo6.png" alt="" class="img-responsive max-width-100 max-height-60 padding-15 align--center">
+</div>
+</div>
+<div class="author-name-sign text-center">-And thousand of more companies</div>
+</div>
 </section>
 <!-- CLIENT END -->
 
@@ -248,27 +232,31 @@
 
 <!-- SUBSCRIPTION -->
 <section id="contact" class="section section-subscribe bg--position-center no-repeat bg-cover" style="background-image:url(images/subscribe.png)">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="subscribe-card bg--position-center no-repeat bg-cover" style="background-image:url(images/mail.png)">
-          <header>
-            <h3 class="text-center"><span class="text--semi-bold">Déjanos tu correo </span> <span class="text--light"> para avisarte de un nuevo curso</span></h3>
-          </header>
-          <div class="subscription-form">
-            <form>
-              <div class="form-group">
-                <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-                <div class="input-group">
-                  <input type="email" class="form-control" id="exampleInputAmount" placeholder="Email">
-                  <div class="input-group-addon subscribe-addons">subscribe</div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="row">
+<div class="col-md-10 col-md-offset-1">
+<div class="subscribe-card bg--position-center no-repeat bg-cover" style="background-image:url(images/mail.png)">
+ <header>
+   <h3 class="text-center"><span class="text--semi-bold">Déjanos tu correo </span> <span class="text--light"> para avisarte de un nuevo curso</span></h3>
+ </header>
+ <div class="subscription-form">
+   <form>
+     <div class="form-group">
+       <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+       <div class="input-group">
+         <input type="email" class="form-control" id="exampleInputAmount" placeholder="Email">
+         <div class="input-group-addon subscribe-addons">subscribe</div>
+       </div>
+     </div>
+   </form>
+ </div>
+</div>
+</div>
+</div>
+</div>
 </section>
+</div>
+
+
+<script src="../js/home.js"></script>
 <!-- SUBSCRIPTION END-->

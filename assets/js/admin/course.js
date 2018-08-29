@@ -40,7 +40,7 @@ let app = new Vue({
     //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
     methods:{
         createLesson:()=>{
-            console.log("createlesson");
+            $("#loader").hide();
             axios({
                 method: 'get',
                 url: `/lesson/createlesson?ordinal=${app.ordinalLesson}&course_id=${app.course.id}`,
@@ -49,6 +49,7 @@ let app = new Vue({
             .then(function (response) {
                 console.log(response);
                app.lessons.push(response.data.lesson);
+               $("#loader").show();
             })
             .catch(function (error) {
                
@@ -56,6 +57,9 @@ let app = new Vue({
         },
         updateCourse:(parameter,value)=>{
         
+            if(parameter==="active"){
+                app.course.active=value;
+            }
 
             axios({
                 method: 'get',

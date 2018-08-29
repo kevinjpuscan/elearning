@@ -8,7 +8,7 @@
   font-size: 16px;
 }
 </style>
-<section id="course-detail" class="section padding-top-bottom-65">
+<section id="detail" class="section padding-top-bottom-65">
         <div class="container">
 
            
@@ -16,67 +16,23 @@
             <div class="col-md-12">
               <div class="pricing-table" style="margin-top: 30px">
                   <li class="header">
-                      <h1 class="name-course"> <strong>Curso de Prueba</strong>    </h1>
+                      <h1 class="name-course"> <strong>{{course.name}}</strong>    </h1>
                   </li>
 
-                <li>
+                <li v-for="lesson in lessons" >
                   <div class="row">
                     <div class="lesson">
                         <div class="col-md-10" style="text-align: left">
-                            <h3>Nombre de la clase</h3>
-                            <p>descripcion de la clase Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ducimus, delectus cupiditate nam provident laborum doloremque repudiandae libero aliquid, corporis maxime ab ex illum similique earum in fugit consequuntur. Tenetur!</p>
+                            <h3>{{lesson.title}}</h3>
+                            <p>{{lesson.description}}</p>
                         </div>
                         <div class="col-md-2">
-                          <button class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o">Ver</button>
+                          <a class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o" v-bind:href="'/lesson?lesson_id='+lesson.id" >Ver</a>
                         </div>
                     </div>
                   </div>
                 </li>
-
-                <li >
-                    <div class="row">
-                      <div class="lesson">
-                          <div class="col-md-10" style="text-align: left">
-                              <h3>Nombre de la clase</h3>
-                              <p>descripcion de la clase Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ducimus, delectus cupiditate nam provident laborum doloremque repudiandae libero aliquid, corporis maxime ab ex illum similique earum in fugit consequuntur. Tenetur!</p>
-                          </div>
-                          <div class="col-md-2">
-                            <button class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o">Ver</button>
-                          </div>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li >
-                      <div class="row">
-                        <div class="lesson">
-                            <div class="col-md-10" style="text-align: left">
-                                <h3>Nombre de la clase</h3>
-                                <p>descripcion de la clase Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ducimus, delectus cupiditate nam provident laborum doloremque repudiandae libero aliquid, corporis maxime ab ex illum similique earum in fugit consequuntur. Tenetur!</p>
-                            </div>
-                            <div class="col-md-2">
-                              <button class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o">Ver</button>
-                            </div>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li>
-                        <div class="row">
-                          <div class="lesson">
-                              <div class="col-md-10" style="text-align: left">
-                                  <h3>Nombre de la clase</h3>
-                                  <p>descripcion de la clase Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ducimus, delectus cupiditate nam provident laborum doloremque repudiandae libero aliquid, corporis maxime ab ex illum similique earum in fugit consequuntur. Tenetur!</p>
-                              </div>
-                              <div class="col-md-2">
-                                <button class="btn btn-default btn-theme btn-rounded-corner margin-top-bottom-50 btn-o">Ver</button>
-                              </div>
-                          </div>
-                        </div>
-                      </li>
-
-               
-      
+                
                 <li class="footer">
                   
                 </li>
@@ -89,6 +45,6 @@
       
       </section>
       <%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
-      <script src="../js/auth/course-detail.js"></script>
+      <script src="../js/course/detail.js"></script>
       <!-- ABOUT END -->
       

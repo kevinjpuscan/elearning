@@ -23,12 +23,55 @@
     .control-lesson i{
         cursor: pointer;
     }
+    #loader{
+     display: none;
+    }
+
+    .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    }
+    .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 6px;
+    border: 2px solid black;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: rgb(110, 110, 110) transparent transparent transparent;
+    }
+    .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+    }
+    .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+    }
+    .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+    }
+    @keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    }
 </style>
 <div id="course" class="row">
         
         <div class="col-md-8 grid-margin">
             <div class="card">
-                    <div class="card-body">
+                <div id="loader" style="margin:auto">
+                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                </div>
+                 
+                <div class="card-body">
                             <form class="forms-sample">
                                     <div class="form-group">
                                       <input v-model="course.name" v-on:blur="updateCourse('name',course.name)" type="text" class="form-control big-input" placeholder="Nombre del curso">
@@ -92,7 +135,8 @@
                             </div>
 
                             <div class="row" style="margin-top:50px;">
-                                    <button class="btn btn-info" style="float:right; font-size: 20px;margin: auto">Publicar Curso</button>
+                                    <button v-if="!course.active" v-on:click="updateCourse('active',true)" class="btn btn-info" style="float:right; font-size: 20px;margin: auto">Publicar Curso</button>
+                                    <button v-if="course.active" v-on:click="updateCourse('active',false)" class="btn btn-danger" style="float:right; font-size: 20px;margin: auto">Inhabilitar Curso</button>
                             </div>
                     </div>
             </div>

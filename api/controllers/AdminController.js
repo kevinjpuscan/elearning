@@ -13,6 +13,19 @@ module.exports = {
     res.view('pages/admin/index');
   },
 
+  view_courses:(req,res)=>{
+    res.locals.layout = 'layouts/admin';
+    Vista.getDatastore().sendNativeQuery(`select * from courses where deletedAt is null;`,(err,data)=>{
+      if(!err){
+        res.view('pages/admin/courses',{courses:data.rows});
+      }else{
+        console.log(err);
+        res.view('pages/admin/courses',{courses:[],error:'ocurrio un error al cargar los datos'});
+      }
+    })
+    
+  },
+
   view_course:(req,res)=>{
     res.locals.layout = 'layouts/admin';
     let course={};
