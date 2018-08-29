@@ -48,7 +48,8 @@ let app = new Vue({
         
             axios.post('/api/v1/course/uploadimage', formData, {
                 headers: {
-                'Content-Type': 'multipart/form-data'
+                    'mimeType':'multipart/form-data',
+                    'contentType': false,
                 }
             }).then(function (response) {
                 
