@@ -94,10 +94,12 @@ module.exports = {
      let name=url[url.length-1];
 
      let query=`update courses set image_url ='${name}' where id=${req.param('course_id')};`;
+     console.log(query);
       Vista.getDatastore().sendNativeQuery(query,(err,data)=>{
         if(!err){
           return res.ok();
         }else{
+          console.log(err);
           return res.badRequest('Error update database');
         }
       });
