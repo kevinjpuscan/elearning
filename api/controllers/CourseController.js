@@ -93,7 +93,8 @@ module.exports = {
      let url=uploadedFiles[0].fd.split('/');
      let name=url[url.length-1];
 
-      Vista.getDatastore().sendNativeQuery(`update courses set image_url ='${name}' where id=${req.param('course_id')};`,(err,data)=>{
+     let query=`update courses set image_url ='${name}' where id=${req.param('course_id')};`;
+      Vista.getDatastore().sendNativeQuery(query,(err,data)=>{
         if(!err){
           return res.ok();
         }else{
