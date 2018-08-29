@@ -89,7 +89,7 @@ config/local.js
 
 node_modules
 
-
+assets/images/courses
 ################################################
 #
 # > Do you use bower?
@@ -122,6 +122,7 @@ nbproject
 .idea
 .node_history
 dump.rdb
+
 
 npm-debug.log
 lib-cov
