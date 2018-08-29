@@ -71,6 +71,37 @@ module.exports = {
         res.ok({error:true,message:'Error al obtener cursos'});
       }
     });
+  },
+
+  uploadimage:(req,res)=>{
+    
+  
+    req.file('image').upload({
+      // don't allow the total upload size to exceed ~10MB
+      maxBytes: 10000000,
+      dirname: require('path').resolve(sails.config.appPath, 'assets/images/courses')
+    },function whenDone(err, uploadedFiles) {
+      if (err) {
+        return res.serverError(err);
+      }
+
+      // If no files were uploaded, respond with an error.
+      if (uploadedFiles.length === 0){
+        return res.badRequest('No file was uploaded');
+      }
+      
+     let url=uploadedFiles[0].fd.split('/');
+     let name=url[url.length-1];
+
+      Vista.getDatastore().sendNativeQuery(`update courses set image_url ='${name}' where id=${req.param('course_id')};`,(err,data)=>{
+        if(!err){
+          return res.ok();
+        }else{
+          return res.badRequest('Error update database');
+        }
+      });
+
+    });
   }
 
 };

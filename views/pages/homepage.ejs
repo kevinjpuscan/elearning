@@ -2,6 +2,7 @@
     .course{
     border-radius: 5px;
     text-align: center;
+    margin-bottom: 30px;
     }
     
     .card{
@@ -52,7 +53,7 @@ style="background-image:url(images/header.png);height: 480px">
 
 <div v-for="course in courses" class="col-md-4 course">
 <div class="card" style="width: 30rem;">
- <img class="card-img-top" src="images/blog1.png" alt="Card image cap">
+ <img class="card-img-top" v-bind:src="'../images/courses/'+course.image_url" alt="Card image cap">
  <div class="card-body">
    <h4 class="card-title">{{course.name}}</h4>
    <p class="card-text">{{course.description}}</p>

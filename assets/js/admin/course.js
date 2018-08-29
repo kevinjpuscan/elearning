@@ -39,6 +39,71 @@ let app = new Vue({
     //  ║║║║ ║ ║╣ ╠╦╝╠═╣║   ║ ║║ ║║║║╚═╗
     //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
     methods:{
+        saveImage:()=>{
+            var formData = new FormData();
+
+            formData.append('image', app.course.image);
+            formData.append('course_id', app.course.id);
+
+            axios.post('/api/v1/course/uploadimage', formData, {
+                headers: {
+                'Content-Type': 'multipart/form-data'
+                }
+            }).then(function (response) {
+                console.log(response);
+               app.lessons.push(response.data.lesson);
+               $("#loader").show();
+            })
+            .catch(function (error) {
+               
+            });
+        },
+        processFile:(event)=>{
+            let imgname=event.target.files[0].name;
+            var reader = new FileReader();
+
+            function dataURLtoFile(dataurl) {
+                var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+                    bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+                while(n--){
+                    u8arr[n] = bstr.charCodeAt(n);
+                }
+                return new File([u8arr], imgname, {type:mime});
+            }
+
+            reader.onloadend = function (e) {
+                var base64image = e.target.result;
+                $("body").append("<canvas id='tempCanvas' width='800' height='800' style='display:none'></canvas>");
+                var canvas=document.getElementById("tempCanvas");
+                var ctx=canvas.getContext("2d");
+                var cw=canvas.width;
+                var ch=canvas.height;
+                var maxW=800;
+                var maxH=800;
+                var img = new Image;
+                img.src=this.result;
+                img.onload = function(){
+                    var iw=img.width;
+                    var ih=img.height;
+                    var scale=Math.min((maxW/iw),(maxH/ih));
+                    var iwScaled=iw*scale;
+                    var ihScaled=ih*scale;
+                    canvas.width=iwScaled;
+                    canvas.height=ihScaled;
+                    ctx.drawImage(img,0,0,iwScaled,ihScaled);
+                    base64image = canvas.toDataURL("image/jpeg");
+                    $("#tempCanvas").remove();
+                    app.course.image_url=base64image;
+                    app.course.image=dataURLtoFile(base64image);
+                }
+                console.log(img);
+
+            };
+            reader.readAsDataURL(event.target.files[0]);
+
+            
+    
+          },
         createLesson:()=>{
             $("#loader").hide();
             axios({
