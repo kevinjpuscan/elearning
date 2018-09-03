@@ -18,7 +18,7 @@ let app = new Vue({
         // Attach any initial data from the server.
         //this.extend(this, SAILS_LOCALS);
         //console.log(SAILS_LOCALS)
-        
+
         //app.path='http://'+window.location.host;
     },
     mounted: function () {
@@ -32,30 +32,30 @@ let app = new Vue({
         }
 
     },
-  
+
 
 
     //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ║║║║ ║ ║╣ ╠╦╝╠═╣║   ║ ║║ ║║║║╚═╗
     //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
     methods:{
-        saveImage:()=>{
+        saveImage: function (){
             var formData = new FormData();
 
             formData.append('image', app.course.image);
             formData.append('course_id', app.course.id);
 
-        
+
             axios.post('/api/v1/course/uploadimage', formData, {
                 headers: {
                     'mimeType':'multipart/form-data',
                     'contentType': false,
                 }
             }).then(function (response) {
-                
+
             })
             .catch(function (error) {
-               
+
             });
         },
         processFile:(event)=>{
@@ -101,8 +101,8 @@ let app = new Vue({
             };
             reader.readAsDataURL(event.target.files[0]);
 
-            
-    
+
+
           },
         createLesson:()=>{
             $("#loader").hide();
@@ -117,11 +117,11 @@ let app = new Vue({
                $("#loader").show();
             })
             .catch(function (error) {
-               
+
             });
         },
         updateCourse:(parameter,value)=>{
-        
+
             if(parameter==="active"){
                 app.course.active=value;
             }
@@ -132,26 +132,26 @@ let app = new Vue({
                 responseType:'json'
             })
             .then(function (response) {
-               
+
             })
             .catch(function (error) {
-               
+
             });
 
         },
 
         updateLesson:(lesson_id,parameter,value)=>{
-            
+
             axios({
                 method: 'get',
                 url: `/lesson/updatelesson?parameter=${parameter}&value=${value}&lesson_id=${lesson_id}`,
                 responseType:'json'
             })
             .then(function (response) {
-               
+
             })
             .catch(function (error) {
-               
+
             });
         },
 
@@ -162,10 +162,10 @@ let app = new Vue({
                 responseType:'json'
             })
             .then(function (response) {
-               
+
             })
             .catch(function (error) {
-               
+
             });
         },
         deletecourse:()=>{
@@ -175,10 +175,10 @@ let app = new Vue({
                 responseType:'json'
             })
             .then(function (response) {
-               
+
             })
             .catch(function (error) {
-               
+
             });
         },
         getLessons:()=>{
@@ -188,10 +188,10 @@ let app = new Vue({
                 responseType:'json'
             })
             .then(function (response) {
-               
+
             })
             .catch(function (error) {
-               
+
             });
         }
 
@@ -202,7 +202,7 @@ let app = new Vue({
     //  ╔═╗╔═╗╔╗╔╗╦═╗╦ ╦╔╦╗╔═╗╦═╗
     //  ║  ║ ║║║║║║═╝║ ║ ║ ║╣ ║ ║
     //  ╚═╝╚═╝╩╚╝╩╩  ╚═╝ ╩ ╚═╝╩═╝
-  
+
     computed:{
         ordinalLesson:()=>{
             let major=1;
@@ -219,8 +219,7 @@ let app = new Vue({
     //  ╠╣ ║║  ║ ║╣ ╠╦╝╚═╗
     //  ╩  ╩╚═╝╩ ╚═╝╩╚═╚═╝
     filters:{
-     
+
     }
 })
 
-  
