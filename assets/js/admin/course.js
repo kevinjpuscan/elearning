@@ -42,6 +42,8 @@ let app = new Vue({
         saveImage: function (){
             var formData = new FormData();
 
+            console.log(app.course.id);
+
             formData.append('image', app.course.image);
             formData.append('course_id', app.course.id);
 
